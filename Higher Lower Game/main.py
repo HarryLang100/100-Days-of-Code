@@ -5,6 +5,16 @@ from game_data import data
 
 
 def get_items_index_pair(items_not_used):
+    """ Choose a random pair of numbers from items_not_used, and remove these numbers from the list.
+
+    Parameters:
+        items_not_used (list): List of available indexes that have not yet been used.
+
+    Returns:
+        A_index (int)
+        B_index (int)
+        items_not_used (list)
+    """
     A_index, B_index = random.sample(items_not_used, k=2)
     items_not_used.remove(A_index)
     items_not_used.remove(B_index)
@@ -12,6 +22,14 @@ def get_items_index_pair(items_not_used):
 
 
 def format_account(account):
+    """ For a given account, returns a string description.
+
+    Parameters:
+        account (dict)
+
+    Returns:
+        string (str)
+    """
     string = f"{account['name']}, a {account['description']}, from {account['country']}"
     return string
 
